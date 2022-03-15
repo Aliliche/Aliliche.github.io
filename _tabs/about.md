@@ -15,7 +15,7 @@ Ce blog traite du Linux embarqué en grande partie, mais aussi   de retro-inform
 
 Si vous voulez en savoir plus sur moi ! [cliquez ici]({% link _posts/2022-02-06-historique-personnel.md %})
 <h2>Contact</h2>
-Si vous avez des réflexions, des corrections ou des suggestions, n’hésitez pas à me contacter !!
+Si vous avez des réflexions, des corrections ou des suggestions, n’hésitez pas à me contacter !
 
 <div>
 <img src="/commons/message-gris.png"  width="30" height="28"/><a href="mailto:alilichelarbi@gmail.com"> <font color="gray" face="Times, Times New Roman, serif">alilichelarbi@gmail.com</font></a>
