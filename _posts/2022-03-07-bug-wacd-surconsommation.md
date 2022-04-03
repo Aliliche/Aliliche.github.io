@@ -5,7 +5,7 @@ author:
   link: https://github.com/Aliliche
 date: 2022-03-06 14:59:00 +0100
 categories: [Bugs,Openwrt]
-tags: [fuites mémoire]
+tags: [fuites mémoire, Openwrt]
 mermaid: true
 pin: true
 ---
@@ -81,6 +81,7 @@ typedef unsigned char		uint8_t;
 
 /* Maximum of unsigned integral types.  */
 # define UINT8_MAX			(255)
+
 ```
 On assigne à cette variable `-1`, un entier négatif, cela n’est pas une erreur en soit car la valeur va être convertie en `unsigned` comme ceci : `UINT8_MAX + 1 -1 = 255` 
 . (C standard [C99 6.3.1.3])
@@ -89,21 +90,25 @@ On aura `ap_index == 255`
 
 {: style="text-align:justify" }
 ###### __[27]__
-`ap_index`  reçoit  une valeur  `i` allant  de `0` à `MAX_LOCAL_AP`, ou 255 si le test __[26]__ est faux. _(MAX_LOCAL_AP = 8.)_     
-
+`ap_index`  reçoit  une valeur  `i` allant  soit  de `0` à `MAX_LOCAL_AP` ou reste à `255` si le test __[26]__ est faux.  
+__Ps__ : MAX_LOCAL_AP == 8
 
 ###### __[31]__
-On teste `if (ap_index == -1)` ; on sort de la fonction si c'est vrais.
-C’est la où  il y a une erreur, `i` est un entier qui va de 0 à `MAX_LOCAL_AP` , `ap_index` ne vaudra jamais -1 car sa valeur est convertie en 255.  
+
+{: style="text-align:justify" }
+On teste `if (ap_index == -1)`, on sort de la fonction si c'est vrais. C’est la où  il y a une erreur !  
+À la sortie de la boucle for, la valeur de `ap_index` est toujours testée. Le but est de sortir de la fonction complète dans le cas ou 
+la condition __26__ de la boucle for est fausse (liste pleine), à ce moment la  `ap_index` n’a pas changé depuis sa définition et donc on doit sortir de la boucle. 
+Le soucis est que `ap_index` ne vaudra jamais `-1` car sa valeur est convertie en `255`.  
 
 ###### __[35]__
-Le test étant faux,  on alloue de la mémoire pour une structure `local_ap_info_t` qui est très grande. C’est ça qui provoque la surconsommation de la mémoire 
+Le test étant faux,  on alloue de la mémoire pour une structure `local_ap_info_t` qui est très grande. C’est ça qui provoque la surconsommation de la mémoire. 
 
 ###### __[48]__
 On fourni à   `ap_list`  à l’index 255  l'adresse de la mémoire  alloué précédemment.   
 
 {: style="text-align:justify" }
-Cette  dernière étape est intéressante. `ap_list` est un tableau de  pointeurs dont la taille est fixée à `MAX_LOCAL_AP cad 8`.  
+Cette  dernière étape est intéressante. `ap_list` est un tableau de  pointeurs dont la taille est fixée à `MAX_LOCAL_AP càd 8`.  
 En C/C++, pour des buts de vitesse, il n’y a pas de bounds checking en utilisant les tableaux. On peut  accéder à un index 255 d’un tableau de 8 cases.
 Le comportement dans ce cas est indéfini. C’est une bonne méthode d’attaque par Buffer Overflow.
 
@@ -111,5 +116,9 @@ Le comportement dans ce cas est indéfini. C’est une bonne méthode d’attaqu
 #### Explication
 
 Dans le cas où le tableau est  local à une fonction, la mémoire  lui est réservée  dans le stack (pile).
-Dans ce cas, déborder du tableau c'est juste accéder à une autre zone allouée dans la pile. Il n’y aura pas de segmentation fault que lorsqu’on déborde de la pile en entier.
+Dans ce cas, déborder du tableau c'est juste accéder à une autre zone allouée dans la pile. Il n’y aura pas de segmentation fault que lorsqu’on déborde de la pile en entier.  
 
+
+Voilà tout, si vous avez des remarques, n’hésitez pas en m’en faire part ! 
+
+À une prochaine. 
