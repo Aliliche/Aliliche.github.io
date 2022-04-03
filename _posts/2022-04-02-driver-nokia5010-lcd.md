@@ -32,12 +32,15 @@ Cet écran est très utilisé par les bidouilleurs, notamment avec des microcont
 il présente la particularité d’être munie d’un contrôleur  PCD8544 qui contrôle les opérations 
 d’affichage.  [voici sa datasheet]({% link /assets/pdf/5110-Nokia.pdf %}), elle nous sera très utile . 
 
-<span>&#9888;</span> le miens est un clone chinois, je ne sais pas si toutes les caractéristiques correspondent à cette datasheet.  
+
+> Mon LCD 5110 est un clone chinois, je ne sais pas si toutes les caractéristiques correspondent à cette datasheet.
+{: .prompt-warning }
 
 
+La cible est  un Raspberry PI 4,  le driver sera cross-compilé sur  une architecture ARM 64-bit. 
 
+![Raspberry Pi 4 ](/assets/img/drivers/pi4.jpg){: w="200" h="350"}
+*Raspberry Pi 4 Model B*
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning: </b>This is a special warning message.
-
-
-<i class="fa fa-camera-retro fa-lg"></i> fa-lg
+ 
+ J'ai décidé de compiler le driver pour [Automotive Grade Linux](https://www.automotivelinux.org/). Si vous voulez savoir comment compiler AGL pour Rapsberry Pi 4,regardez ici
