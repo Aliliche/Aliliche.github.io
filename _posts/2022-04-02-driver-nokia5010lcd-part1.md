@@ -42,10 +42,22 @@ La cible est  un Raspberry PI 4,  le driver sera cross-compilé sur  une archite
 ![Raspberry Pi 4 ](/assets/img/drivers/pi4.jpg){: w="200" h="350"}
 *Raspberry Pi 4 Model B*
 
-> J’ai décidé de compiler tout les drivers que je vais faire pour [Automotive Grade Linux](https://www.automotivelinux.org/). J’en ai déjà parlé, je suis très intéressé par le développement  embarqué automobile, alors c’est l’occasion de découvrir  cet Os.  
-Si vous voulez savoir comment compiler AGL pour Rapsberry Pi 4, [cliquez ici.]({% link _posts/2022-04-10-compiler-AGL.md %})
-{: .prompt-note }
+J’ai décidé de compiler tout le driver  pour [OpenWrt](https://openwrt.org/). Au début je voulais le faire pour [Automotive Grade Linux](https://www.automotivelinux.org/) car je suis très intéressé par l’embarqué automobile, mais l’OS est difficile à compiler, il y a beaucoup de dépendances et je ne connais pas Yocto ce qui n’arrange rien.
+Ceci dit, je reviendrais sur AGL après.  
+
+Openwrt est simple car il est construit avec buildroot, c’est un Linux qu’on trouve beaucoup sur des routeurs  donc assez léger. En plus la version du Kernel est récente.  
+<br>
+
+# Cablage
+
+![Cablage sur RPi4](/assets/img/drivers/cablage.png){: w="350" h="450"}
+*Cablage sur RPi4*
+
+
+
+
 
 <br>
+
 
 C’est tout pour aujourd’hui, on commence à développer dans la seconde partie.
