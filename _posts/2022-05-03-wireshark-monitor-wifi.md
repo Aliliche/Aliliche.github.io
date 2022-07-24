@@ -4,14 +4,14 @@ author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-05-03 18:13:00 +0100
-categories: [Wireless tricks ]
-tags: [passion linux]
+categories: [Réseaux]
+tags: [wifi]
 pin: true
 ---
 
 
 {: style="text-align:justify" }
-J’ai fait une petite modification dans la  partie wireless de Linux,  plus exactement dans l’interface nl80211 qui est une interface de communication entre les programmes du userspace (wpa_supplicant, iw, etc) et des  modules et drives du kernel cfg80211 et mac80211.  
+J’ai fait une petite modification dans la  partie wireless de Linux,  plus exactement dans l’interface nl80211 qui est une interface de communication entre les programmes du userspace (wpa_supplicant, iw, etc) et des  modules et drivers du kernel cfg80211 et mac80211.  
 ![Wireless Linux Subsystem](/assets/img/generic/mac80211.png){: w="350" h="250"}
 *Wireless Linux Subsystem*
 Ma modification portait sur le fait d’autoriser une STA (client) à faire un scan actif, c’est à dire  envoyer des probe request pour découvrir des AP.  
