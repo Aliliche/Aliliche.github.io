@@ -16,7 +16,7 @@ Les systèmes Linux embarqués sont assez légers, généralement ils n’embarq
 
 Il existe plusieurs façons de cross compiler, le plus simple serait d’intégrer directement notre module dans le système et le compiler avec. C’est d’ailleurs ce que je vais  faire à la fin, créer un module buildroot.  
 
-Pour la phase de développement, j’ai choisi de cross-compiler avec les headers du Kernel. Les headers du Kernel sont un ensemble de fichiers d’entête écrits en C requis pour compiler n’importe quel code pour le Kernel.  En gros c’est une définition des fonctions et des structures.  
+Pour la phase de développement, j’ai choisi de cross-compiler avec les headers du Kernel. Les headers du Kernel sont un ensemble de fichiers d’entête écrits en C requis pour compiler n’importe quel code pour le Kernel.  En gros c’est une définition des fonctions et des structures qu'on trouve  trouve  dans le kernel source tree, les plus importantsheaders sont dans `include/linux` et `include/asm` mais d’autres aussi  sont ailleurs.
 
 Pour compiler notre driver, on doit générer ces headers à partir des sources Kernel de Openwrt qui tourne sur notre RPi4, ensuite on cross-compile sur la target avec la bonne toolchain. J’ai fait cette manipe  car c’est plus simple que de compiler tout le Kernel.  
 
@@ -72,6 +72,27 @@ static void __exit  hello_exit(void)
 module_init(hello_init);
 module_exit(hello_exit);
 ```
+
+### Modules Kernel
+
+{: style="text-align:justify"}
+Il y a quelques différences entre la programmation au niveau Kernel et en niveau User Space. 
+Un module ou un driver suit les conventions de codage au niveau Kernel.  
+
+Le module définit deux fonctions : `hello_init()` invoquée au chargement et `hello_exit()` invoquée au déchargement du module.  Ces fonctions servent à enregistrer 
+le driver au Kernel pour de futurs appelles . La fonction `exit()` doit défaire tout ce que la fonction `init()` a fait, par exemple désallouer de la mémoire. 
+
+
+
+`module_init()` et `module exit()` utilisent des macros pour indiquer le rôle de chacune des fonctions "hello" cités précédemment.
+`MODULE_LICENCE` pour la licence, sans elle le Kernel va crier et Richard STALLMAN aussi d'ailleur. 
+
+`printk()` se comporte comme `printf()` de la GNU C library.  le Kernel tourne de lui même et ne nécessite pas des librairies C.  
+Un programme peut appeler une fonction qu’il n’a pas définit, la  phase de linkage résout ça en utilisant des librairies C, un module par contre n’est linké qu’au Kernel,  donc les seuls fonctions qu’il peut appeler sont celles exportés par ce dérnier.  Exemple:  `printk` est définit au
+Kernel et exporté aux modules.   
+`KERNEL_ALERT`  définit la priorité du message (info, alterte , erreur ,debug..etc).
+
+
 Le Makefile de compilation:
 ```shell
 # if KERNELRELEASE is defined, we've been invoked from kernel build system
@@ -96,7 +117,24 @@ clean:
 
 CFLAGS_test.o := -DDEBUG
 ```
-Un code qui apelle  le Makefile avec les bons paramétres de cross-compilation:
+#### Explication du makefile 
+
+{: style="text-align:justify"}
+
+Normalement pour compiler un module, une simple ligne de code `obj-m := module.o` suffit, le responsable `kbuild system` fera le reste.  
+
+Ce makefile  est lu en deux fois: 
+
+__Quand le makefile est invoqué par une ligne de commande:__  cela signifie que la variable `KERNELRELEASE` est pas définit,
+dans ce cas kbuild system  va se charger  de trouver le Kernel source tree.   
+
+__Quand c'est invoqué par Kbuild system:__
+Si le kernel pour lequel on compile n’est pas celui de la machine actuelle (eg. notre cas  de  cross compilation)  alors il faut définir  ou se trouve le Kernel source tree,
+une fois trouvé, le makefile   appelle la target default et sa commande  va compiler nos modules à partir des fichier objets spécifiés dans  `obj-m`, c’est la seconde lecture (invocation par ligne de commande).  
+Dans cette ligne, on change de directory pour aller dans le source tree du kernel pointé avec `-C`, la seconde `M=PWD` nous fait revenir sur le dossier courant ou sont 
+nos source pour compiler les fichiers objets specifiés par `obj-m` et générer des fichiers `.ko`
+
+Voici un code qui apelle  le Makefile avec les bons paramétres de cross-compilation:
 
 ```shell
 #!/bin/bash
@@ -109,7 +147,7 @@ export PATH=$PATH:/home/vicious/openwrt/staging_dir/toolchain-aarch64_cortex-a72
 ```
 <br>
 {: style="text-align:justify"}
-> Pour savoir ce qui se traîne dans ce module, il faut voir le __chapitre II__ de [Linux Device Drivers 3rd edition]({%  link _posts/2022-02-10-Mes-livres-linux.md %}).  
+> Pour plus d'informations voir le __chapitre II__ de [Linux Device Drivers 3rd edition]({%  link _posts/2022-02-10-Mes-livres-linux.md %}).  
 Pour le makefile, un excellent [Tuto de développez.com](https://gl.developpez.com/tutoriel/outil/makefile/)
 {: .prompt-note}
 
@@ -119,7 +157,7 @@ J'envois le module par ssh sur  mon RaspberryPi  et je charge le module et HOP!!
 *dmesg*
 
 
-Pour décharger le module, il faut compiler OpenWRT avec l’option module unload
+Pour décharger le module, il faut compiler OpenWRT avec l’option module unload.
 
 {: style="text-align:justify"}
 Ok ! Maintenant il faut discuter d’une chose, le type de notre driver.  
@@ -128,9 +166,147 @@ On peut faire le driver de plusieurs façons, on peut le faire comme un driver d
 
 L’autre façon de faire et d’utiliser le `Bus SPI` et donc l’API SPI du Kernel. On va toujours interagir avec le LCD  via `/dev` mais sans utiliser  les fonctions l’interface char `(file_operations)`.  
 
-On doit dans ce cas ajouter le LCD dans le `Device Tree` de Linux et écrire une fonction de `probe()` pour détecter.
+On doit dans ce cas ajouter le LCD dans le `Device Tree` de Linux et écrire une fonction de `probe()` pour détecter le hardware.
 
 D’ailleurs c’est ce qu’on va faire !
 
 ##### Device Tree 
+
+{: style="text-align:justify"}
+Un device tree est un arbre de structures de  données avec des nœuds décrivants le composant matériel.
+Selon ePAPR (power.org)
+
+Le device tree compilé porte une extension `.dtb` __device tree blob__ 
+Le fichier avant compilation est un `.dts` __device tree source__.
+
+pour le compiler on utilise le compilateur `dtc` :
+
+``` shell
+# installation dtc
+sudo apt-get install device-tree-compiler
+
+# Compialtion dts ou dtsi
+dtc -I dts -O dtb -o devicetree_file_name.dtb devicetree_file_name.dts
+
+# conversion dts->dtb
+dtc -I dts -O dtb -f devicetree_file_name.dts -o devicetree_file_name.dtb
+
+# conversion dtb->dts 
+dtc -I dtb -O dts -f devicetree_file_name.dtb -o devicetree_file_name.dts
+
+```
+les dtb et dts se trouvent dans   le dossier ou sont décompressés  et compilés les packages : `/build_dir`  .
+
+`bcm2711-rpi-4-b.dtb ` se trouve la ou il y a l'image linux et `bcm2711-rpi-4-b.dts` est dans 
+`build_dir/target-aarch64_cortex-a72_musl/linux-bcm27xx_bcm2711/linux-5.15.53/arch/arm/boot/dts`
+
+
+{: style="text-align:justify"}
+le device tree se compose de cette forme :
+
+![Device tree](/assets/img/drivers/dt.png){: w="350" h="450"}
+*Device tree.   
+Source: Bootlin, Embedded Linux training by Thommas Petazzoni*
+
+Il ya des nœuds qui représentent le device, chaque node est suivis de son adresse dans la mémoire.  
+
+Le node a des propriétés, des  sous node qu'on apelle child nodes et on voit qu’un node peut faire référence à un autre node, on apelle ça un phandle.  
+Le node peut aussi avoir un label. 
+
+Pour intégrer le device tree du LCD dans celui du kernel, un certains nombre de propriétés doit exister.  
+
+tout d'abord, il faut que le node décrivant le LCD doit un un "child node" du contrôleur spi, donc toutes les propriétés ce ce controleurs doivent 
+être spécifiés.  
+
+voici la section qu'il faut ajouter en dessous du device spi numero 2:
+
+``` c
+&spi0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&spi0_pins &spi0_cs_pins>;
+	cs-gpios = <&gpio 8 1>, <&gpio 7 1>;
+
+	spidev0: spidev@0{
+		compatible = "spidev";
+		reg = <0>;	/* CE0 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		spi-max-frequency = <125000000>;
+	};
+
+	spidev1: spidev@1{
+		compatible = "spidev";
+		reg = <1>;	/* CE1 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		spi-max-frequency = <125000000>;
+	};
+	5110lcd@3{
+		compatible = "adafruit,Nokia5110 LCD";
+		reg = <3>;
+		spi-max-frequency = <32000000>;
+		dc-gpios = <&gpio 9 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
+		backlight = <&bgpio 7 GPIO_ACTIVE_HIGH>;
+	};
+
+};
+```
+### Propriétés
+{: style="text-align:justify"}
+
+`compatible <manifacture, modele> `: avec cette propriété , l’OS va décider quel driver va se lier à ce composant.   
+
+`Reg` : Cette propriété dépend du type de bus sur lequel on est raccordé, elle est composé  comme suite `<adresse , length>`,
+cela veut dire que la zone réservée pour le node lcd commence à partir de `adresse` et sa taille est `length`. 
+Chaque adressse est une liste de __un__ ou __plusieurs__ cellules (cells).  
+La taille aussi peut etre une liste de cellules de 32 bits.   
+
+Puisque les adresses sont de variables de taille length , dans le node parent on va specifier:  
+`#address-cells` : nombre de cellules 32 bits necessaires pour former l'adresse de reg  
+`#size-cells` :  nombre de cellules 32 bits necessaires pour former la taille  de reg   
+
+
+> il y a deux façons d’ajouter la section dans le DT, soit en cherchant le .dts de la carte cité précédemment, soit en décompilant le dtb, je préfère cette dernière car on a plus d’informations sur la taille des zones mémoires et leurs offsets . 
+{: .prompt-note}
+
+Le contrôleur de gpio est spécifié avec 2 cellules `#gpio-cells` donc pour spécifier les gpio,
+on besoin d’un phandle sur le contrôleur de gpio, du numéro de la ligne gpio (celle 1) et d’un flag
+active low/high (cell 2).  
+Il faut regarder le dts décompilé pour voir comment est définit le contrôleur gpio.   
+
+Data/Control gpio : comme dit dans la partie 1 est une entrée  pour choisir le type de donnée selon
+ce qu’on lui envoi :  
+
+- 0 ou `GPIO_ACTIVE_HIGH` pour DATA
+- 1 ou  `GPIO_ACTIVE_LOW` pour Controle 
+
+Le controleur gpio déclare des pins soit en mode GPIO soit en mode ALT, ce qui veut dire 
+alternate function, cela veut dire qu'elle sont utilisé dans un autre mode que le gpio simple
+exemple : chip-select du SPI, Clock pour i2c,PWM ...etc
+chaque pin peut avoir plusieurs alternate functions
+
+Pour choisir tel ou tel fonction, il faut changer les 3 bits du registre AF .
+
+__En résumé__:  
+
+J'ai choisis dans le device tree un GPIO pour le backlight, un GPIO de RESET et un autre de controle. 
+les autres je fais apelle à eux depuis le driver.
+
+### Fonction de probe ()
+
+{: style="text-align:justify"}
+Fonction de probe() 
+
+La fonction de probe est appelée  au démarrage du kernel, ou quand on plug le device (dans le cas
+d’un device déconnectable). On dit qu’elle est appelée à chaque fois que device est vu __(À compléter  plus tard__ ). 
+
+Son rôle en gros est de détecter le device (dans notre cas le LCD).   
+Cette fonction fait l’initialisation du device, l’initialisation du hardware, enregistrer le framework kernel nécessaire ..etc 
+
+Greg-Kroah Hartman disait "les drivers sont simples à écrire, ce qui est difficle est de comprendre le materiel"
+
+Alors !! C'est simple, le chantier est difficle, je dois convetir un driver deja existant qui est un Driver
+frambuffer en driver DRM. 
+yen a plusieurs mais j'ai choisis détudier le fb_hx8357d.c et son equivalent DRM hx8357d.c 
 
