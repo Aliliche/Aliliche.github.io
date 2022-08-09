@@ -58,6 +58,16 @@ Openwrt est simple car il est construit avec buildroot, c’est un Linux qu’on
 
 
 <br>
+# pins 
+C'est important de comprendre les pins car c'est avec ça qu'on va écrire le device tree
 
+- __reset__	: Reset le module quand 0v est envoyé (active low)
+- __CE__	: Pin de selection en cas ou plusieurs slaves sont branchés au SPI (active low)
+- __DC__	: Les informations envoyées sont soit des données (D/high) soit des suites controle (C/low)
+- __DIN__	: MOSI
+- __CLK__	: Une horloge pour le SPI
+- __VCC__	: Alimentation 2.7v  à 3.3 v
+- __BL__	: Backlight
+- __GND__	: Gound
 
 C’est tout pour aujourd’hui, on commence à développer dans la seconde partie.
