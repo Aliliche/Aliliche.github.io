@@ -159,16 +159,32 @@ J'envois le module par ssh sur  mon RaspberryPi  et je charge le module et HOP!!
 
 Pour décharger le module, il faut compiler OpenWRT avec l’option module unload.
 
-__Les choses sérieuses commencent ici__
+Les choses sérieuses commencent ici, il faut discuter d’une chose, le type de notre driver.  
+
+##### Type du driver  
 
 {: style="text-align:justify"}
-Il faut discuter d’une chose, le type de notre driver.  
 
-On peut faire le driver de plusieurs façons, on peut le faire comme un driver de type `char driver`, c’est a dire que notre driver aura une interface de type char dans `sysFs`, on interagit avec le driver via un nœud dans `/dev` et on va initialiser et enregistrer  notre LCD  grâce à des fonctions `init()` et `exit()` au chargement du module. Le driver dans ce cas va utiliser directement les `GPIO` pour envoyer les donnés au  LCD. Cette façon de faire est simple, et je trouve qu’elle dénature un peux l’aspect des choses.  
+On peut faire le driver de plusieurs façons, on peut le faire comme un driver de type `char driver`, c’est a dire que notre driver aura une interface de type char dans `sysFs`, on interagit avec le driver via un nœud dans `/dev` et on va initialiser et enregistrer  notre LCD  grâce à des fonctions `init()` et `exit()` au chargement du module. Le driver dans ce cas va utiliser directement les `GPIO` pour envoyer les donnés au  LCD.   
 
 L’autre façon de faire et d’utiliser le `Bus SPI` et donc l’API SPI du Kernel. On va toujours interagir avec le LCD  via `/dev` mais sans utiliser  les fonctions l’interface char `(file_operations)`.  
 
-On doit dans ce cas ajouter le LCD dans le `Device Tree` de Linux et écrire une fonction de `probe()` pour détecter le hardware.
+En faisant des recherches sur le type d’API, helpers qu’il faut utiliser, je suis tombé sur une API  très intéressants: __Direct Randering Manager__ .  
+J’ai trouvé ces helpers DRM car j’ai consulté le driver d’un autre écran LCD TFT que j’ai dans mon stock.  
+
+Par contre, j’en ai trouvé deux types, les helpers DRM et les tiny-drm. Les tiny-drm se veulent plus faciles.  
+Perdu , j’ai donc envoyé un message à un des mainteneurs du kernel [Andy Shevchenko](https://github.com/andy-shev), il m’a répondu et a transféré  mon message  pour le mainteneur de la partie DRM du kernel.
+
+Voici sa réponse très intéressante.  
+
+![DRM vs Tiny-drm](/assets/img/drivers/andyshev_message.png){: w="350" h="450"}
+*DRM vs Tiny-drm*
+
+
+
+
+
+Donc décidé, je vais utiliser les helpers DRM. 
 
 D’ailleurs c’est ce qu’on va faire !
 
