@@ -165,9 +165,9 @@ Les choses sérieuses commencent ici, il faut discuter d’une chose, le type de
 
 {: style="text-align:justify"}
 
-On peut faire le driver de plusieurs façons, on peut le faire comme un driver de type `char driver`, c’est a dire que notre driver aura une interface de type char dans `sysFs`, on interagit avec le driver via un nœud dans `/dev` et on va initialiser et enregistrer  notre LCD  grâce à des fonctions `init()` et `exit()` au chargement du module. Le driver dans ce cas va utiliser directement les `GPIO` pour envoyer les donnés au  LCD.   
+On peut faire le driver de plusieurs façons, on peut le faire comme un driver de type `char driver`, c’est a dire que notre driver aura une interface de type char dans `sysFs`, on interagit avec le driver via un nœud dans `/dev` et on va initialiser et enregistrer  notre LCD  grâce à des fonctions `init()` et `exit()` au chargement du module. Le driver dans ce cas va utiliser directement les `GPIO` pour envoyer les donnés au  LCD, c'est pas intéressant.  
 
-L’autre façon de faire et d’utiliser le `Bus SPI` et donc l’API SPI du Kernel. On va toujours interagir avec le LCD  via `/dev` mais sans utiliser  les fonctions l’interface char `(file_operations)`.  
+Une autre façon  serait  d’utiliser le `Bus SPI` et donc l’API SPI du kernel. On va toujours interagir avec le LCD  via `/dev` mais sans utiliser  les fonctions de l’interface char `(file_operations)`. 
 
 En faisant des recherches sur le type d’API, helpers qu’il faut utiliser, je suis tombé sur une API  très intéressants: __Direct Randering Manager__ .  
 J’ai trouvé ces helpers DRM car j’ai consulté le driver d’un autre écran LCD TFT que j’ai dans mon stock.  
