@@ -1,0 +1,24 @@
+VPN:
+---
+
+Si on veut acceder à un réseau via un VPN sous debian, il faut les cértificats. 
+tu fais importer le fichier.ovpn dans settings/network. 
+ensuite il faut installer network-manager-openvpn et openvpn-gnome-manager si non ça pause des soucis
+quand tu essaie d'importer les cértificats, ça te dit que les fichiers ne peuvent pas etres lus ou un truc du genre. 
+
+ensuite une erreur classique est que il te dit que la version SSL n'est pas supporté: 
+"openssl: error:1425f102:ssl routines:ssl_choose_client_version:unsupporte"
+
+la ce que tu fais c'est que tu vas dans le fichier de config openssl 
+dans /usr/lib/ssl/openssl.conf et tu modifie la version à MinProtocol = TLSv1.0 ay lieu de TLSv1.2
+
+ensuite il faute ajouter la route vers le reseau avec la bonne gateway et sur le pc
+que tu veux y acceder a distance tu ajoute aussi la gateway et la route vers le reseau.
+
+acksys: 10.9.0.0/255.255.255.0/192.168.1.89
+
+WavesOS:
+--------
+ dans waveOS si on te dit qu'un package "has dependencies" quand tu fais un clean, alors 
+ il faut faire un switch target
+
