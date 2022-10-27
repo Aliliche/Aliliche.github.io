@@ -1,5 +1,5 @@
  ajouter un vlan apres avoir probe le module 
-=============================================
+--------------------------------------------
 $ inserer le module 80211q
 $ip link add link eno1 name eno1.100 type vlan id 100 
 
@@ -7,8 +7,10 @@ $ ip addr add 10.125.0.10/19 brd + dev eno1.100
 
 $ip link set up  eno1.100
 
+
+
 compiler le package mac80211
-===================================
+----------------------------
 les sources nouveau sont dans backport, c'est ceux la qu'on compile 
 make package/kernel/mac80211/compile 
 
@@ -16,14 +18,17 @@ le dossier contient un makefile qui va chercher les sources tout seule
 tu vas dans buildir/backport/mac80211 tu va trouver un mac80211.ko genérer le plus recement 
 tu envois sur le produit et tu reboot  pour qu'il prenne les dépendance 
 
+
+
 compiler iwinfo 
-====================================
+---------------
 tu compile normalement dans package et surtout ! tu envois le binaire et 
 libiwinfo.so si non tu vois pas tes print
 
-iw_cli /wpa_supplicant 
-==========
 
+
+iw_cli /wpa_supplicant 
+----------------------
 wpa command line pour interagir avec wpa_supplicant
 wpa_cli -i wlan0 -p /var/run/wpa_supplicant-wlan0
 aussi 
@@ -37,24 +42,27 @@ $hostap_cli -iwlan0 [command] | grep state : les commandes hostapd regarde googl
  ou bien $hostap_cli -iwlan0 -p /var/run/hostapd-phy0 : sans l'extention .conf 
  l'extention .conf est utilisé pour lancer hostapd  or hostap_cli c'est un outil pour 
  controller hostapd. 
-===================== acksys event handler
+
+
+acksys event handler
+--------------------
 compiler le package seule 
 faire killall sur le produit et lancer à la main en mode debug 
 $acksys_event_handler -d7 -f 
 lancer une console avec logread -f, un autre console pour acksys_event_handler 
 une autre pour des testes 
 
+
 vlan, gre ..etc
-================
+----------------
 Quand on configure un gre, on doit pas bridger l'interface gre dans network lan 
 dans l2tunnel: on doit donner au  remote endpoint gre l'adresse de l'interface wifi distante 
 on doit l'attacher notre local endpoint à notre interface wifi local 
 regarder le document APNUSO18
 
 
-failsafe mode 
-===============================
-
+failsafe mode
+-------------
 j'ai supprimé busybox et le emergency upgrade ne marche pas 
 il faut rentrer dans failsafe et faire mount_root ou root_mount 
 comme ça mon rootfilesystem sera dans la rom que j'ai chargé en emergency 
@@ -62,12 +70,14 @@ donc la tu supprime dans overlay /upper le fichier qui dit que j'ai supprimé bu
 
 !! rectification, j'ai supprimé busy box , le emergency upgrade ne marche pas donc tu peux pas charger 
 le firemware 
+
+
 afficher type de socket
-===================================
+-----------------------
 exemple type socket_raw, tu fais lsof >aa.txt
 
 Gateway
-===========================
+-------
 
 en gros la Gateway dans les routeurs acksys  exemple
 lan : 192.168.91.45
@@ -79,8 +89,7 @@ sachant que ce reseaux doit avoir deux interface 88 + 91
  sur un pc et celles qui se trouvent sur un routeur acksys 
 
 debug snmpd 
-======================================
-
+-----------
 activer les debug faisait cracher le produit 
 cela  ne date pas de 'aujoud'huit 
 
@@ -88,15 +97,16 @@ pour afficher les logs sur certaines librarairie, comme par exemple default_stor
 il faut envoyer la lib netsnmp.so 
 pour ça dans la librarie du fichier , tu rendre dans .lib et tu fait string "message de ddebug" | grep fichier.o 
 tu dois le voir et envoyer la lib ou c'est affiché 
-OID apply
-=======================
 
+
+OID apply
+---------
 quand tu fais un changement de l'OID snmpd, ilf faut appeler un OID qui fait un apply 
 si non cela ne commit pas 
 
-hospad et wpa_supplicant
-=========================
 
+hospad et wpa_supplicant
+------------------------
 les fichiers de config de hostapdet wpa_supplicant sont genéré dans hostapd.sh 
 
 des fonctions de network.lua sont appelée aussi 
@@ -106,7 +116,7 @@ mac80211.sh  lis le fichier de config  wireless et ecrit dans le fichier de conf
 
 
 fonctionnement de netifd et de srcc
-==========================================
+-----------------------------------
 netifd lis le fichier uci et recupere les parametres, il fait des exec des setup et des dump dans mac80211.sh 
 c'est ce fichier qui crée le fichier de config de hostapdet wpa_supplicant à travers hospad.sh ( y a un lien )
 et lance hosptapd et supplicant
@@ -120,11 +130,11 @@ antennes dedans.
 on ne doit pas ecrire dans le fichier de config de srcc les antennes car les sources de srcc n'ont pas prevu ça
 
 Cannaux 
-==============================
+-------
 le canal primaire est celui sur le canal on beacone 
 
 page status et setup
-=======
+-------------------
 
 dans les pages de setup on peut utiliser le fichier de configet lire des inforation d'eux 
 mais dans les page de setup, on ne le fait pas on prefere utiliser ce le systeme 
@@ -133,8 +143,7 @@ car dans le fichier de config , on peut configurer sans que sa soit trouner
 c'est afaire un apply seulement 
 
 SGI dans luci et les apelles a iw
-=========================================
-
+----------------------------------
 Nous avons vu précememnt que les pages luci apellent iw ou iwinfo pour récuperer des choses 
 ceci se fait soit directement sur la page soit en passant par des sgi, les sgi sont des pages de config en gros 
 elle font apelle a des fonctions qui apelles iw et iwinfo , les SGI sont index.lua generalement.
