@@ -20,10 +20,10 @@ J’ai fait mes études à l’université de Grenoble où j’ai préparé un m
 
 {: style="text-align: justify" }
 Quand j’avais environs 6 ans - début des années 2000 - j’ai reçu une console de jeux très SPÉCIALE. Un clone de la Nintendo Famicom
-que je présente [ici]({% link _posts/2022-02-25-mon-premier-pc.md%}). C’était mon tout premier ordinateur ! pour les _retrogamers_  d’entre vous ; j’ai joué à des jeux  comme Double Dragon, Contra, Ninja Gaiden, Lupin Sansei et j’en passe. Ma passion du <i>retrogaming</i>  vient de la.
+que je présente [ici]({% link _posts/2022-02-25-mon-premier-pc.md%}). C’était mon tout premier ordinateur, pour les _retrogamers_  d’entre vous,  j’ai joué à des jeux  comme Double Dragon, Contra, Ninja Gaiden, Lupin Sansei et j’en passe. Ma passion du <i>retrogaming</i>  vient de la.
 
 {: style="text-align: justify" }
-Cette console, comme dit dans l’article possède une interface très interactive et est munie d’un Basic. J’y ai déjà mis les mains mais malheureusement ! je ne savais pas ce que c’était.<br>
+Cette console, comme dit dans l’article possède une interface très interactive et est munie d’un Basic. J’y ai déjà mis les mains mais malheureusement, je ne savais pas ce que c’était.<br>
 
 {: style="text-align: justify" }
 J’ai ensuite peux de temps après  acquis un ordinateur Pentium 4 sous Windows 98. Je passais mon temps sur Encarta et Encarta junior et j’ai découvert  la 3D dans les jeux.
