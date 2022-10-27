@@ -1,11 +1,10 @@
 ---
-title: Commandes Git utiles
+title: Cheatsheet git
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-06-02 09:13:00 +0100
-categories: [Linux, Git]
-tags: [Git]
+categories: [CheatSheet, Git]
 ---
 
 #  Nouveau repo 

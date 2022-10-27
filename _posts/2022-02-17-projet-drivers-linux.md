@@ -5,14 +5,14 @@ author:
   link: https://github.com/Aliliche
 date: 2022-02-17 22:27:00 +0100
 categories: [Linux, Drivers]
-tags: [drivers linux, linux drivers]
+tags: [projet drivers linux]
 pin: true
 ---
 
 
 {: style="text-align: justify" }
 Quand j’ai commencé à m’intéresser aux drivers Linux, on m’avait  orienté vers le livre que j’ai présenté
-[ici]({% link _posts/2022-02-10-Mes-livres-linux.md %}),  Linux Device Drivers  de  Jonathan Corbet, Alessandro Rubini et Greg Kroah-Hartman.<br>
+[ici]({% link _posts/2022-02-10-mes-livres-linux.md %}),  Linux Device Drivers  de  Jonathan Corbet, Alessandro Rubini et Greg Kroah-Hartman.<br>
 
 {: style="text-align: justify" }
 Ce livre est une référence dans le domaine. Les auteurs -dont l’actuel mainteneur de la branche stable  Greg Kroah-Hartman-  ont essayé  de rester le plus

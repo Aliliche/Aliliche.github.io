@@ -1,11 +1,10 @@
 ---
-title: Commandes VIM utiles
+title: CheatSheet vim
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-06-06 18:36  +0100
-categories: [Linux, VI]
-tags: [vi]
+categories: [CheatSheet,Vim]
 ---
 
 

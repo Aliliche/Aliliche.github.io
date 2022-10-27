@@ -30,7 +30,14 @@ ip link set wlp2s0 up
 ```
 
 
-le deuxieme en creant une autre interface wifi en mode moniteur  
+le deuxieme en creant une autre interface wifi virtuelle en mode moniteur  
+
+pour créer une autre interface de type moniteur : 
+
+```console
+iw dev wlp2s0 interface add  monit0 type monitor  
+ip link set monit0 up 
+```
 voila ce que donne la commande `iw dev info`  
 ```console
 interface wlp2s0
@@ -43,13 +50,6 @@ interface wlp2s0
 	txpower 15.00 dBm
 ```
 J'ai une interface type managed, veut dire mode STA(client) 
-
-pour créer une autre interface de type moniteur : 
-
-```console
-iw dev wlp2s0 interface add  monit0 type monitor  
-ip link set monit0 up 
-```
 
 > La création d’une autre interface wifi  type moniteur  doit être supporté par le driver
 Certains  drivers ne supportent pas deux ifaces fonctionnant en tandem. 

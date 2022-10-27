@@ -1,11 +1,10 @@
 ---
-title: Cheat sheet Love2D
+title: Cheatsheet Love2D
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-05-28 20:50:00 +0100
-categories: [Love2D]
-tags: [2d jeux]
+categories: [CheatSheet, Love2D]
 ---
 
 

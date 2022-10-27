@@ -147,7 +147,7 @@ export PATH=$PATH:/home/vicious/openwrt/staging_dir/toolchain-aarch64_cortex-a72
 ```
 <br>
 {: style="text-align:justify"}
-> Pour plus d'informations voir le __chapitre II__ de [Linux Device Drivers 3rd edition]({%  link _posts/2022-02-10-Mes-livres-linux.md %}).  
+> Pour plus d'informations voir le __chapitre II__ de [Linux Device Drivers 3rd edition]({%  link _posts/2022-02-10-mes-livres-linux.md %}).  
 Pour le makefile, un excellent [Tuto de développez.com](https://gl.developpez.com/tutoriel/outil/makefile/)
 {: .prompt-note}
 

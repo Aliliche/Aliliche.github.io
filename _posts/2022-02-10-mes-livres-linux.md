@@ -23,6 +23,7 @@ La majorité de ces livres sont disponibles en version Pdf gratuite. Moi  je pr�
 Le langage C est la porte d’entrée pour être un développeur Kernel et  ce livre est un modèle de documentation technique.<br>
 <em>"You can learn the C language without getting Kernighan and Ritchie, but that's doing it the hard way. You're also working too hard if you make it the only book on C that you buy." </em><br>
 <em><strong>Jerry Pournelle</strong></em><br>
+La seule remarque à faire c'est que c'est en francais, parfois la traductions n'est pas précise.  
 J’ai commencé à corriger les exercices du livre, le repo est sur mon Github.</p>
 
 ### Linux Device Drivers 3rd Édition

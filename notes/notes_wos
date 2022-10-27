@@ -140,3 +140,11 @@ ceci se fait soit directement sur la page soit en passant par des sgi, les sgi s
 elle font apelle a des fonctions qui apelles iw et iwinfo , les SGI sont index.lua generalement.
 generalement on les reconnait ses apelles au sgi grace à la presence dune fonction xhr.get
 
+Fichier shadow:
+==============
+
+le fichier shadow contient le mot de passe crypté des utilisateurs, la fonction  qui cripte 
+le password est crypt() c'est une fonction de libc.
+elle cripte en MD5,SHA256....
+la fonction qui récupere le password est dans les fichier password_u et passwo_r dans luci.
+

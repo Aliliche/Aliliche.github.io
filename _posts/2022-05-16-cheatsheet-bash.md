@@ -1,11 +1,10 @@
 ---
-title: Commandes Shell utiles
+title: Cheatsheet bash
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-05-16 21:17:00 +0100
-categories: [Linux, Shell]
-tags: [shell]
+categories: [CheatSheet,Bash]
 ---
 
 # 1. tail
