@@ -1,2 +1,4 @@
-# Linux Monkey Blog 
+# Linux Monkey Blog
+
+This is my personal website
 
