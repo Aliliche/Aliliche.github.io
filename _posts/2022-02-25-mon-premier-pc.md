@@ -12,7 +12,7 @@ pin: true
 
 
 
-J’ai reçu quand j’étais jeune une console de ce genre.
+J’ai reçu quand j’étais petit une console de ce genre.
 
 ![Nintendo Famiclone](/assets/img/famiclone/first_computer.jpeg){: w="250",h="150"}
 *Mon premier ordinateur 8 bits*
