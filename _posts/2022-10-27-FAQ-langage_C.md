@@ -8,3 +8,5 @@ categories: [Linux,C]
 tags: [FAQ C]
 pin: true
 ---
+
+Quelques questions intéressantes
