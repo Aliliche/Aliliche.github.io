@@ -33,7 +33,7 @@ github:
   username: Aliliche             # change to your github username
 
 twitter:
-  username: larbi@aliliche            # change to your twitter username
+  username: buffer_z            # change to your twitter username
 
 
 social:
@@ -43,7 +43,7 @@ social:
   email:    alilichelarbi@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    #- https://twitter.com/larbi@aliliche      # change to your twitter homepage
+    - https://twitter.com/buffer_z      # change to your twitter homepage
     - https://github.com/Aliliche       # change to your github homepage
     # Uncomment below to add more social links
     - https://www.facebook.com/Vfor.vandetta.98031
