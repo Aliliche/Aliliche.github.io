@@ -24,3 +24,17 @@ git remote set-url origin "new url"
 git push -u origin master 
 
 ```
+
+# git stash
+
+Permet de sauvegarder une copie de  travail localement si on changer faire quelque chose d'autre
+
+``` shell
+git stash # sauvegarder
+git stash pop # restaurer
+git stash apply # applique le stash sur un copy de travail ou une branche
+```
+
+Cette command est intéressante, notamment le `apply` car il permet d'appliquer les changements sur une branche
+sans passer par un commit.  
+
