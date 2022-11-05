@@ -98,7 +98,7 @@ comments:
     issue_term:   # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo:  'https://github.com/Aliliche/aliliche.github.io'            # <gh-username>/<repo>
+    repo:  'Aliliche/Aliliche.github.io'            # <gh-username>/<repo>
     repo_id: '455685712'
     category: 'BlogComment'
     category_id:
