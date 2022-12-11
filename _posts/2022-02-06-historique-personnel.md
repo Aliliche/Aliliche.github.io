@@ -12,31 +12,33 @@ pin: true
 ## Présentation
 
 {: style="text-align: justify" }
-Je m’appelle Larbi, je suis ingénieur Linux embarqué débutant dans le domaine. Je  vis dans le Val-d’Oise en île  de France depuis un peux plus de 4 mois.
+Je m’appelle Larbi, je suis ingénieur Linux embarqué débutant dans le domaine. Je  vis dans le Val-d’Oise en île  de France depuis un peu plus de 4 mois.
 J’ai fait mes études à l’université Grenoble Alpes où j’ai préparé un master professionnel en systèmes embarqués.
 
 
 ## Découverte de  l’informatique
 
 {: style="text-align: justify" }
-Quand j’avais environs 6 ans - début des années 2000 - j’ai reçu une console de jeux très SPÉCIALE, un clone de la Nintendo Famicom
-que je présente [dans cet article]({% link _posts/2022-02-25-mon-premier-pc.md%}). C’était mon tout premier ordinateur (oui ordinateur). Pour les _retrogamers_  d’entre vous,  j’ai joué à des jeux  comme : Double Dragon, Contra, Ninja Gaiden, Lupin Sansei et j’en passe. Ma passion du <i>retrogaming</i>  vient de la.
+Quand j’avais environs 7 ans - début des années 2000 - j’ai reçu une console de jeux très SPÉCIALE, un clone de la Nintendo Famicom
+que je présente [dans cet article]({% link _posts/2022-02-25-mon-premier-pc.md%}). C’était mon  premier ordinateur (oui un ordinateur). Pour les _retrogamers_  d’entre vous,  j’ai joué à des jeux  comme : Double Dragon, Contra, Ninja Gaiden, Lupin Sansei et j’en passe. Ma passion du <i>retrogaming</i>  vient de la.
 
 {: style="text-align: justify" }
-Cette console, comme dit dans l’article possède une interface très interactive et est munie d’un Basic. J’y ai déjà mis les mains mais malheureusement, je ne savais pas ce que c’était.<br>
+Cette console, comme dit dans l’article possède une interface très interactive et munie d’un Basic. J’y ai déjà mis les mains mais malheureusement, je ne savais pas ce que c’était.<br>
 
 {: style="text-align: justify" }
-J’ai ensuite peux de temps après  acquis un ordinateur Pentium 4 sous Windows 98. Je passais mon temps sur Encarta et Encarta junior et j’ai découvert  la 3D dans les jeux.
-J’ai joué à deux types de jeux,  ceux du PC natifs et ceux de la PS1 grâce à un émulateur __Bleem!__
+Peu de temps après, j'ai  acquis un ordinateur Pentium 4 sous Windows 98. Je passais mon temps sur Encarta et Encarta junior et j’ai découvert  la 3D dans les jeux.
+J’ai joué à deux types de jeux,  ceux du PC natifs et ceux de la PS1 grâce à un émulateur __Bleem!__  
+![bleem](/assets/img/famiclone/bleem.webp){: w="200" h="350"}
+*Bleem*
 <br>
 
 {: style="text-align: justify" }
-De nature extrêmement curieuse, je passais mon temps à bidouiller sur mon Pc. Je suis passé sous Windows XP, fait un peux de _modding_ en augmentant la RAM,  un lecteur DVD, une souris laser...<br>
-Quand j’ai eu le Bac, j’ai directement choisis de faire un tronc commun math-informatique pour ensuite m’orienter vers des études d’électronique.
+De nature extrêmement curieuse, je passais mon temps à bidouiller sur mon Pc. Je suis passé sous Windows XP, fait un peu de _modding_ en augmentant la RAM,  un lecteur DVD, une souris laser...<br>
+Quand j’ai eu le Bac, j’ai directement choisi de faire un tronc commun math-informatique pour ensuite m’orienter vers des études d’électronique.
 
 ## Pour quoi des études d’électronique ?
 {: style="text-align: justify" }
-J'ai choisis l'électronique car j’aime le hardware, j’adore interagir avec les registres, les mémoires avec du code. Je suis très intéressé par le développement bas niveau : drivers, bootloader, baremetal, etc.
+J'ai choisi l'électronique car j’aime le hardware, j’adore interagir avec les registres, les mémoires avec du code. Je suis très intéressé par le développement bas niveau : drivers, bootloader, baremetal, etc.
 Durant mes etudes, j’ai travaillé à mis-temps dans une boite de  maintenance informatique. J’ai appris beaucoup de choses
 sur la maintenance.
 
@@ -52,12 +54,14 @@ J’ai deux grandes passions:
 ##### 1. l'informatique et la retro-informatique
 
 {: style="text-align: justify" }
-Je fais les puces souvent et j’ai quelques ordinateurs rares. Je suis un _retrogamer_, je trouve un grand intérêt à jouer à d’anciens jeux, cela donne une idée de  comment les développeurs pensaient  à cette époque et surtout je suis fasciné par leur talent de développeurs ! [A COMPREHENSIVE SUPER MARIO BROS DISASSEMBLY](https://gist.github.com/1wErt3r/4048722)
+Je fais les puces souvent et j’ai quelques ordinateurs rares. Je suis un _retrogamer_, je trouve un grand intérêt à jouer à d’anciens jeux, cela donne une idée de  comment les développeurs pensaient  à cette époque et surtout je suis fasciné par leur talent de développeur :  [A COMPREHENSIVE SUPER MARIO BROS DISASSEMBLY.](https://gist.github.com/1wErt3r/4048722)
 
 ##### 2. L’automobile
 
 {: style="text-align: justify"}
-J'adore le Japon et la culture japonaise, notamment une discipline  sportive que j’aborderai sûrement : le drift.<br>
+J'adore le Japon et la culture japonaise, notamment une discipline  sportive que j’aborderai sûrement : le drift.<br>  
+![Drift](/assets/img/famiclone/drift.webp){: w="200" h="350"}
+*Drift*
 
 J’aime les voitures japonaises, surtout celles d’entre 1980 et 2000 qui sont championnes de cette discipline : S13, Sil80, AE86 etc.<br>
 
