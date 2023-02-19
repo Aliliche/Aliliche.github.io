@@ -4,7 +4,7 @@ author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
 date: 2022-05-22 15:02:00 +0100
-categories: [SheeCheat, Lua]
+categories: [CheatSheet,lua]
 ---
 
 
