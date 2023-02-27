@@ -40,5 +40,15 @@ Pour une raison ou une autre, la console est détécté par le kernel, on le voi
 un des scripte python qui fait apelle à ce node renvoit ` Device not found` et donc l'accès à la console est 
 impossible. 
 
+En cherchant sur internet j'ai rien trouvé, donc on passe au plan B.  
 
+## Plan B, se connecter à la console en UART.
+
+La console n'est pas vraiment prévue pour ça, mais en faisant quelque soudures, on peut accéder à la console en série.  
+Cela se fait via le port de lecture des cartouches, en effet il y a des sorties Rx et Tx pour le protocole UART. 
+
+![port cartouche: source elinux.org](/assets/img/generic/uart.jpg){: w="250" h="250"}
+*port cartouche: soure elinux.org*
+
+Les sorties qu’on voit sur port cartouche sont des sorties UART TTL, pour les rendre utilisables sur le PC on doit utiliser un convertisseur USB ->UART.
 
