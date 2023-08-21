@@ -9,4 +9,4 @@ tags: [FAQ C]
 pin: true
 ---
 
-Quelques questions intéressantes
+Quelques questions intéressantes en C
