@@ -18,14 +18,14 @@ timezone:   Europe/Paris
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Linux Monkey Blog                          # the main title
+title: /dev/console                          # the main title
 
-tagline: Aliliche@larbi   # it will display as the sub-title
+tagline: Aliliche larbi   # it will display as the sub-title
 
-description: >-                        # used by seo meta and the atom feed
-  Journal d'un passioné du Kernel
-  Linux, des processeurs 8 bits
-  et du chiptune.
+description: #>-                        # used by seo meta and the atom feed
+  #Journal d'un passioné du Kernel
+  #Linux, des processeurs 8 bits
+  #et du chiptune.
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://Aliliche.github.io'
 
@@ -46,7 +46,6 @@ social:
     - https://twitter.com/buffer_z      # change to your twitter homepage
     - https://github.com/Aliliche       # change to your github homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/Vfor.vandetta.98031
     - https://www.linkedin.com/in/aliliche-larbi-036022174/?originalSubdomain=fr
 
 google_site_verification: google_meta_tag_verification # change to your verification string
@@ -83,7 +82,7 @@ theme_mode:    #[light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/commons/avatar5.png'
+avatar: '/commons/got_shot.png'
 # boolean type, the global switch for ToC in posts.
 toc: true
 
