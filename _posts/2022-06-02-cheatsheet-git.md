@@ -37,4 +37,9 @@ git stash apply # applique le stash sur un copy de travail ou une branche
 
 Cette command est intéressante, notamment le `apply` car il permet d'appliquer les changements sur une branche
 sans passer par un commit.  
-
+# suppimer des branches 
+``` shell
+git branch -d <branch_name> # remove local branch
+git branch -D <branch_name> # local force even not merged
+git push <remote_name> --delete <branch_name> # remote branch
+```
