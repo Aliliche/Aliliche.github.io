@@ -1,5 +1,5 @@
 ---
-title: Cheatsheet bash
+title: CheatSheet bash
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche

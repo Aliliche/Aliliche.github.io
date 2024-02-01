@@ -1,5 +1,5 @@
 ---
-title: Cheatsheet Love2D
+title: CheatSheet Love2D
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche

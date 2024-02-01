@@ -1,5 +1,5 @@
 ---
-title: Cheatsheet git
+title: CheatSheet git
 author:
   name: Aliliche larbi
   link: https://github.com/Aliliche
