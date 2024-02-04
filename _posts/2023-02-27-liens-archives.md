@@ -10,7 +10,8 @@ tags: [Archives]
 ## Programmation/apprentissage
 [Structures #001:structures casting in C](https://stackoverflow.com/questions/3766229/casting-one-struct-pointer-to-another-c)  
 [OpenWRT #002:Gestion du trafic reseau grace à TC](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-127/qos-et-gestion-du-trafic-avec-traffic-control)  
-[Linux Trainer recommanded by Thomas Petazzoni](https://man7.org/training/lusp/index.html)
+[Linux Trainer recommanded by Thomas Petazzoni](https://man7.org/training/lusp/index.html)  
+[10 choses que les développeurs logiciels devraient apprendre sur l'apprentissage](https://programmation.developpez.com/actu/352409/10-choses-que-les-developpeurs-logiciels-devraient-apprendre-sur-l-apprentissage-un-article-scientifique-de-Neil-C-C-Brown-Felienne-F-J-Hermans-et-Lauren-E-Margulieux/)  
 
 ## Programmation/jeux
 [Blog de fabien sanglard](https://fabiensanglard.net/about/index.html)  
@@ -27,4 +28,4 @@ tags: [Archives]
 
 # Événements
 
-[Agenda du libre 2024](https://linuxfr.org/news/agenda-du-libre-pour-la-semaine-6-de-l-annee-2024)
+[Agenda du libre 2024](https://linuxfr.org/news/agenda-du-libre-pour-la-semaine-6-de-l-annee-2024)  
