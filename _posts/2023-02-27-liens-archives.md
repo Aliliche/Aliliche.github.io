@@ -25,3 +25,6 @@ tags: [Archives]
 [Blog shirpy avec nom de domaine](https://vansoest.dev/posts/creating-a-dev-blog/)  
 
 
+# Événements
+
+[Agenda du libre 2024](https://linuxfr.org/news/agenda-du-libre-pour-la-semaine-6-de-l-annee-2024)
