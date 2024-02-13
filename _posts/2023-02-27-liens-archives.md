@@ -11,7 +11,7 @@ tags: [Archives]
 [Structures #001:structures casting in C](https://stackoverflow.com/questions/3766229/casting-one-struct-pointer-to-another-c)  
 [OpenWRT #002:Gestion du trafic reseau grace à TC](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-127/qos-et-gestion-du-trafic-avec-traffic-control)  
 [Linux Trainer recommanded by Thomas Petazzoni](https://man7.org/training/lusp/index.html)  
-[10 choses que les développeurs logiciels devraient apprendre sur l'apprentissage](https://programmation.developpez.com/actu/352409/10-choses-que-les-developpeurs-logiciels-devraient-apprendre-sur-l-apprentissage-un-article-scientifique-de-Neil-C-C-Brown-Felienne-F-J-Hermans-et-Lauren-E-Margulieux/)  
+[10 choses que les développeurs logiciels devraient apprendre sur l'apprentissage](https://programmation.developpez.com/actu/352409/10-choses-que-les-developpeurs-logiciels-devraient-apprendre-sur-l-apprentissage-un-article-scientifique-de-Neil-C-C-Brown-Felienne-F-J-Hermans-et-Lauren-E-Margulieux/)
 
 ## Programmation/jeux
 [Blog de fabien sanglard](https://fabiensanglard.net/about/index.html)  
@@ -19,6 +19,7 @@ tags: [Archives]
 [Ghost of tsuchima developpement](https://gdcvault.com/play/1027214/Advanced-Graphics-Summit-Procedural-Grass)  
 [PS4 démontage](https://youtu.be/INQn1M1_tt8?si=LBmIxt_D2A97V6iw)  
 [Louis-Marie Rocques, programmeur](https://www.oldies-but-goodies.fr/index.php?page=personnalite&id=5)  
+[Professeur de lycée traitant quelques algorithmes notamment la sqrt de Carmack](https://professeurb.github.io)  
 
 
 ## Géneral
