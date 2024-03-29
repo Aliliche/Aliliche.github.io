@@ -20,6 +20,7 @@ tags: [Archives]
 [PS4 démontage](https://youtu.be/INQn1M1_tt8?si=LBmIxt_D2A97V6iw)  
 [Louis-Marie Rocques, programmeur](https://www.oldies-but-goodies.fr/index.php?page=personnalite&id=5)  
 [Professeur de lycée traitant quelques algorithmes notamment la sqrt de Carmack](https://professeurb.github.io)  
+[Raytracing de carmack sur doom](https://lodev.org)
 
 
 ## Géneral
