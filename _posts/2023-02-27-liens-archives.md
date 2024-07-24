@@ -22,7 +22,8 @@ tags: [Archives]
 [Professeur de lycée traitant quelques algorithmes notamment la sqrt de Carmack](https://professeurb.github.io)  
 [Raytracing de carmack sur doom](https://lodev.org)
 [Blog d'un ingénieur chez Google, Fabien Sanglard](https://fabiensanglard.net/)  
-[Copetti site, specialisé dans les architectures de console](https://www.copetti.org/)
+[Copetti site, specialisé dans les architectures de console](https://www.copetti.org/)  
+[Introduction à la programmation graphique](http://raphaello.univ-fcomte.fr/)  
 
 
 ## Géneral
