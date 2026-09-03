@@ -132,7 +132,7 @@ Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 
 **Hobbies**
 - Sport auto, Sim Racing
-- Photographie : [clique here](https://www.instagram.com/z.buffer_/)
+- Photographie : [cliquez ici](https://www.instagram.com/z.buffer_/)
 - Analyse de jeux vidéo
 - Retro Computing & Retrogaming
 - 3D
