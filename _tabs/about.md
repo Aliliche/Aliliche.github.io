@@ -13,7 +13,7 @@ Ce site me sert à conserver et à partager mes notes.
 Si vous souhaitez me contacter ou réagir au contenu de mon blog, vous pouvez me joindre par email à l’adresse suivante:
 
 <div>
-<img src="/commons/message-gris.png"  width="30" height="28"/><a href="mailto:alilichelarbi@gmail.com"> <font color="gray" face="Times, Times New Roman, serif">alilichelarbi@gmail.com</font></a>
+<img src="/commons/message-gris.png"  width="40" height="38"/><a href="mailto:alilichelarbi@gmail.com"> <font color="black" face="Times, Times New Roman, serif">alilichelarbi@gmail.com</font></a>
 </div><br>
 
 
