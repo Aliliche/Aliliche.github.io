@@ -14,6 +14,16 @@ Passionné par le développement et l’intégration bas niveau, j’interviens 
 Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout en privilégiant les problématiques proches du matériel. Je peux également intérvenir sur les couches basses d’Android (kernel, init, daemons, bootloader).
 {: style="text-align : justify" }
 
+<div class="contact-button-container">
+  <a href="{{ '/about/' | relative_url }}" class="contact-button">
+    Me contacter
+  </a>
+  
+  <a href="{{ '/about/' | relative_url }}" class="contact-button">
+    CV (pdf)
+  </a>
+</div>
+
 {% endcapture %}
 {% include experience.html content=experience_content %}
 
