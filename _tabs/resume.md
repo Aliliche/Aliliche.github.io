@@ -3,20 +3,26 @@ title: Resume/CV
 icon: fas fa-file-alt
 order: 4
 ---
+{% capture experience_content %}
 {: style="text-align : justify" }
 Passionné par le développement et l’intégration bas niveau, j’interviens sur l’ensemble de la chaîne Linux embarqué: 
 
-- Développement d'application:  bootloader (U-boot), kernel, init, daemons.  
-- Portage et intégration: toolchains, environnements de développement, BSP, Linux custom.  
-- Optimisation des plateformes embarquées: Vitesse de démarrage (U-boot, kernel, init), empreinte mémoire.  
+- **Développement d'application**:  bootloader (U-boot), kernel, init, daemons.  
+- **Portage et intégration**: toolchains, environnements de développement, BSP, Linux custom.  
+- **Optimisation des plateformes embarquées**: Vitesse de démarrage (U-boot, kernel, init), empreinte mémoire.  
 
 Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout en privilégiant les problématiques proches du matériel. Je peux également intérvenir sur les couches basses d’Android (kernel, init, daemons, bootloader).
 {: style="text-align : justify" }
 
+{% endcapture %}
+{% include experience.html content=experience_content %}
+
 ---
-# Experience
+# Parcours professionnel détaillé
 ---
-## Ingénieur Linux Embarqué
+
+{% capture experience_content %}
+## **Ingénieur Linux Embarqué**
 **Wizzilab** — Montrouge, France
 *Avril 2026 — Aujourd’hui*
 
@@ -25,12 +31,15 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 - Débogage et correction de bugs de démarrage et de crashs survenant après les mises à jour `OTA upgrade`.
 - Correction de bugs divers jusqu'a la stabilisation du produit.
 
->
-Environnement technique :C, Bash, Ruby, Lua, Yocto, U-Boot, Linux embarqué.
-{: .prompt-note}
+🛠 **Environnement technique** :C, shells (sh/bash), Ruby, Lua, Yocto, U-Boot, Linux embarqué, variscite, IMX6ul, dash7.
 
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
-## Ingénieur Linux Embarqué
+---
+
+{% capture experience_content %}
+## **Ingénieur Linux Embarqué**
 
 **ACKSYS Communications & Systems** — Yvelines, France
 *Novembre 2021 — Avril 2026*
@@ -63,7 +72,7 @@ Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué bas
     - Réécriture de dizaines de pages de configuration des services ACKSYS en JavaScript.
 
 - **Linux embarqué :**   
-    - Board bring up de la serie ACKSYS airwave : device tree, uboot, kernel, GUI.
+    - Board bring-up de la serie ACKSYS airwave : device tree, u-boot, kernel, GUI.
     - Mesure et amélioration du temps de démarage et de l'empreinte mémoire sur la serie ACKSYS airbox.
     - Modification du driver phy gpy215 sur railbox pour la gestion de l'autoneg. 
     - Intégration et modification du driver ds2411 pour la gestion des numero de serie.
@@ -77,11 +86,15 @@ Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué bas
     - Formalisation des besoins et rédaction d’une spécification technique, présentée en réunion pour évaluation.
 
 
->
-Environnement technique :Secure Boot, U-Boot, Linux embarqué, TMP, TrustZone,  ipq6010. QSEE, Qualcomm
-{: .prompt-note}
+🛠**Environnement technique** :C, shells(sh/bash), python, lua, JavaScript, u-Boot, kernel, mac80211, ath11k, Wi-Fi, TCP/IP, Linux embarqué, Secure Boot, TMP, ipq6010, Qualcommn, nand/nor, ubi, mtd.
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
-## Stagiaire – Développeur Driver Linux
+
+---
+
+{% capture experience_content %}
+## **Stagiaire – Développeur Driver Linux**
 **Tiempo Secure** — Grenoble, France
 *Février 2021 — Juillet 2021*
 
@@ -96,11 +109,14 @@ Environnement technique :Secure Boot, U-Boot, Linux embarqué, TMP, TrustZone,  
 - Création d’un outil de test en userspace.
 - Intégration Buildroot.
 
->
-Environnement technique :C, asm, Bash, buildroot, U-Boot, Linux embarqué, FPGA, RISCV, kernel, drivers, SPI, kgdb
-{: .prompt-note}
+🛠 **Environnement technique** :C, asm, shells(sh/bash), buildroot, U-Boot, Linux embarqué, FPGA, RISCV, kernel, drivers, SPI, kgdb, nand/nor, ubi, mtd.
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
-## Projet de Fin d’Études
+---
+
+{% capture experience_content %}
+## **Projet de Fin d’Études**
 **Centre Spatial Universitaire de Grenoble** — Grenoble, France
 *Novembre 2020 — Février 2021*
 
@@ -108,14 +124,15 @@ Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 - Acquisition de données depuis la mémoire FPGA et envoi via pile TCP/IP (Lightweight TCP/IP).
 - Implémentation hardware des blocs IP Microblaze + application logicielle.
 
->
-Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
-{: .prompt-note}
+🛠 **Environnement technique** :C, Bash, FreeRTOS, TCP/IP, FPGA. Xilinx, artix7.
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
 ---
 # Education
 ---
 
+{% capture experience_content %}
 ## Master II – Micro-électronique, Intégration des systèmes temps réels embarqués
 **Université Grenoble Alpes**
 *Septembre 2019 — Août 2021*
@@ -129,20 +146,28 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
 **Université Mouloud Mammeri Tizi Ouzou**
 *Septembre 2014 — Août 2018*
 
+{% endcapture %}
+{% include experience.html content=experience_content %}
+
 ---
 # Langues
 ---
+{% capture experience_content %}
 
 - **Anglais, Français, Arabe** — courant
 - **Kabyle** — Langue maternelle
+
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
 ---
 # Compétences
 ---
 
+{% capture experience_content %}
 **Linux Embarqué**
 - Maîtrise avancée des Linux embarqués particulièrement Linux Wireless (OpenWrt): init, config, partitions, upgrade.
-- Board Bring Up de nouvelles cartes. Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
+- Board bring-up de nouvelles cartes. Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
 - Toolchains, cross-compilation et BSP Linux : crosstool-NG, yocto, buildroot, u-Boot
 - Développement de drivers Linux : char, block, mtd, plateform, spi.
 - Développement de drivers pour blocs FPGA (architecture RISC-V)
@@ -158,17 +183,21 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
 
 **Outils**
 - GNU/Linux : make, gcc, gdb, kgdb, valgrind, ftrace.
-- YOCTO, Buildroot, crosstool-NG, Git, Quilt, Redmine, Vim
-- Wireshark, tcpdump, iperf
+- YOCTO, buildroot, crosstool-NG, git, quilt, redmine, vim.
+- Wireshark, tcpdump, iperf.
 
 **Protocoles**
-- Wi-Fi, TCP/IP, UART, I2C, SPI, USB, RS-232
-- Bonne compréhension du modèle OSI et de la stack WI-FI
+- Wi-Fi, TCP/IP, UART, I2C, SPI, USB, RS-232.
+- Bonne compréhension du modèle OSI et de la stack WI-FI.
+
+{% endcapture %}
+{% include experience.html content=experience_content %}
 
 ---
 # Projects and Open-Source Contributions
 ---
 
+{% capture experience_content %}
 - **Participation à la coupe de France de robotique** — *Mai 2021*
   Thème : *Sail the World* (Grenoble)
 
@@ -176,10 +205,14 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
   Participation à des événements et conférences sur les systèmes embarqués et le logiciel libre/open-source :
   **Paris Embedded, FOSDEM, Hack in Paris, SysDream**
 
+{% endcapture %}
+{% include experience.html content=experience_content %}
+
 ---
 # Autres
 ---
 
+{% capture experience_content %}
 **Hobbies**
 - Sport auto, Sim Racing
 - Photographie : [cliquez ici](https://www.instagram.com/z.buffer_/)
@@ -188,3 +221,6 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
 - 3D
 - Membre de l’Association MO5
 - Méditation de pleine conscience, culture japonaise, voyages(🇯🇵 🇫🇷 🇭🇺 🇦🇹 🇩🇪 🇧🇪 🇵🇹 🇪🇸 🇨🇭)
+
+{% endcapture %}
+{% include experience.html content=experience_content %}
