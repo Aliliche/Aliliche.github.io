@@ -6,16 +6,12 @@ order: 4
 {: style="text-align : justify" }
 Passionné par le développement et l’intégration bas niveau, j’interviens sur l’ensemble de la chaîne Linux embarqué: 
 
+- Développement d'application:  bootloader (U-boot), kernel, init, daemons.  
 - Portage et intégration: toolchains, environnements de développement, BSP, Linux custom.  
-- Développement d'application:  bootloader, kernel, init, daemons.  
-- Optimisation des plateformes embarquées: Vitesse de démarrage, empreinte mémoire.  
+- Optimisation des plateformes embarquées: Vitesse de démarrage (U-boot, kernel, init), empreinte mémoire.  
 
-Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout en privilégiant les problématiques proches du matériel. J’interviens également sur les couches basses d’Android (kernel, init, daemons, bootloader).
+Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout en privilégiant les problématiques proches du matériel. Je peux également intérvenir sur les couches basses d’Android (kernel, init, daemons, bootloader).
 {: style="text-align : justify" }
-
-<a href="/assets/pdf/ALILICHE_LARBI_RESUME_2026_ELE.pdf" target="_blank" class="btn">
-  <i class="fas fa-file-pdf"></i> Download PDF
-</a>
 
 ---
 # Experience
@@ -23,24 +19,66 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 ## Ingénieur Linux Embarqué
 **Wizzilab** — Montrouge, France
 *Avril 2026 — Aujourd’hui*
-- Maintenance d'une distrbution Yocto, correction de bugs.
-- Prise et main, simplification et modification de l'outil de production des gateways Wizzilab
+
+- Production des gateways Wizzilab : reprise, simplification et évolution des outils de programmation. Mise en place d'une machine dédiée et formation des ingénieurs au processus de production automatisé. Cela couvre la programmation des SoC vierges, l'enregistrement des gateways sur les serveurs, tests et validation avant et après production, ainsi que la préparation à la livraison.
+- Maintenance de la distribution Yocto des gateways sur plateforme Variscite : maintenance des couches `meta-variscite` ainsi que  du  bootloader  `u-Boot-imx` spécifique à la plateforme
+- Débogage et correction de bugs de démarrage et de crashs survenant après les mises à jour `OTA upgrade`.
+- Correction de bugs divers jusqu'a la stabilisation du produit.
+
+>
+Environnement technique :C, Bash, Ruby, Lua, Yocto, U-Boot, Linux embarqué.
+{: .prompt-note}
+
 
 ## Ingénieur Linux Embarqué
+
 **ACKSYS Communications & Systems** — Yvelines, France
-*Novembre 2021 — Aujourd’hui*
+*Novembre 2021 — Avril 2026*
 
-**Travaux récents :**
-- Portage de la stratégie de roaming vers OpenWrt 24 / Linux kernel 6.6 (hostapd, wpa_supplicant, mac80211, ath10k, ath11k).
-- Analyse approfondie d’ath11k (CE, WMI, MAC, DP…) et de la couche mac80211 pour réduire significativement le temps de roaming
-- Développement d’un mécanisme dual-boot (U-Boot) avec fonctionnalités de recovery.
-- Conception et implémentation d’une nouvelle WebUI embarquée (migration de Lua vers une architecture full JavaScript).
+Développement , évolution, et maintenance  de **WaveOS, un Os Linux embarqué basé sur OpenWrt**, avec des developpement  sur l’ensemble de la pile logicielle, du bootloader `u-Boot` au `device tree` jusqu’au Kernel, aux services système et aux applications embarquées.
 
-**Travaux précédents :**
-- Amelioration de l'algorithme de roaming predictif (PLH) : mac80211, ath11k, wpa_supplicant.
-- Projet SRCC – Smart Redundancy Carriage Coupling : amélioration de la fiabilité par mécanismes de redondance intelligente.
-- Développement de « surveyd », un daemon de monitoring pour détecter et gérer les pertes de lien Wi-Fi.
-- Maintenance de WaveOS (système d’exploitation ACKSYS) : userspace → kernel (LED, drivers ath10k/ath11k, mac80211, hostapd/supplicant).
+- **Wi-Fi et roaming :** 
+    - Portage de la stratégie de roaming vers OpenWrt 24 / Linux 6.6, avec adaptation de toute la stack Wi-Fi (`iw`, `iwinfo`, `hostapd`, `wpa_supplicant`, `mac80211`, `ath11k`).  
+    - Analyse, debug approfondie du driver `ath11k` (Copy Engine, WMI, MAC, Data Path) et la couche `mac80211`. J'ai aporté des modifications me permettant de réduire le temps de roaming de **1 s à ~ 150 ms**.
+    - Analyse et validation de firmwares Qualcomm apres leur modification par un tiers. Mise en place d'une station dediée et analyse par wireshark des trames de powersave, de differents parametres de `ath11k`  permettant de modifier le comportement des `beacon`, `scan` ..etc
+    - Mise en évidance de bugs dans les firmwares proprietaires Qualcomm dans la gestion du roaming, des trames vlan. Sujet remonté au mainline.
+
+- **Roaming prédictif :**   
+    - Développement de fonctionnalités pour les projets ACKSYS & ATOS/NOKIA, modification de l'algorithme de roaming predictif pour ameliorer le débit de la communication bord-sol
+
+
+- **Développement userspace :**   
+    - Développement de « surveyd », un daemon de monitoring pour détecter et gérer les pertes de lien Wi-Fi.  
+    - Evolution et maintenance des services init, SNMP, télémétrie, supervision (`collectd`) et du systeme des mises à jour OTA.
+
+- **Bootloader et fiabilité système :**   
+    - Développement d’un mécanisme de démarrage dual-boot sous `u-Boot`, démarage sur plusieurs partitions, récupération après crash ou corruption  
+    - Developpement de la page GUI permettant de programmer Flasher WaveOS et u-boot, de switcher entre les partitions.  
+    - Gestion des configs système sur les paritions
+    - Mise au point d'une station de prorgammation des socs vierges ou corrompus avec l'outil `sahara` de chez Qualcomm
+
+
+- **Interface Web embarquée :**   
+    - Conception et implémentation d’une nouvelle WebUI pour les routeurs ACKSYS, migration de Lua vers une architecture full JavaScript.
+    - Réécriture de dizaines de page de configurations des services ACKSYS en JS.
+
+- **Linux embarqué :**   
+    - Board bring up de la serie ACKSYS airwave : uboot, kernel, GUI.
+    - Mesure et amélioration du temps de démarage et de l'empreinte mémoire sur la serie ACKSYS airbox.
+    - Modification du driver phy gpy215 sur railbox pour la gestion de l'autoneg. 
+    - Intégration et modification du driver ds2411 pour la gestion des numero de serie.
+    - Developpement de features, debug, maintenance  de fonctionnalités et de services sur l’ensemble de WaveOS: ubus, collectd, net snmp, bridge vlan, init, wpa_supplicant, hostapd
+
+- **Érude de sécurisation de la serie airwave**
+    - Analyse des lacunes de sécurité des produits ACKSYS, notamment l’absence de Secure Boot.
+    - Étude des solutions de sécurisation hardware/software: Secure Boot, TPM et ARM TrustZone.
+    - Recherche technique approfondie, collecte d’informations auprès de fournisseurs et étude comparative des coûts.
+    - Formalisation des besoins et rédaction d’une spécification technique, présentée en réunion pour évaluation.
+
+
+>
+Environnement technique :Secure Boot, U-Boot, Linux embarqué, TMP, TrustZone,  ipq6010. QSEE, Qualcomm
+{: .prompt-note}
 
 ## Stagiaire – Développeur Driver Linux
 **Tiempo Secure** — Grenoble, France
@@ -57,6 +95,10 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 - Création d’un outil de test en userspace.
 - Intégration Buildroot.
 
+>
+Environnement technique :C, asm, Bash, buildroot, U-Boot, Linux embarqué, FPGA, RISCV, kernel, drivers, SPI, kgdb
+{: .prompt-note}
+
 ## Projet de Fin d’Études
 **Centre Spatial Universitaire de Grenoble** — Grenoble, France
 *Novembre 2020 — Février 2021*
@@ -64,6 +106,10 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 - Acquisition de données depuis la mémoire FPGA et envoi via pile TCP/IP (Lightweight TCP/IP).
 - Implémentation hardware des blocs IP Microblaze + application logicielle.
+
+>
+Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
+{: .prompt-note}
 
 ---
 # Education
@@ -94,11 +140,12 @@ Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 ---
 
 **Linux Embarqué**
-- Maîtrise avancée des Linux embarqués particulièrement Linux Wireless (OpenWrt)
-- Toolchains, cross-compilation et BSP Linux : Yocto, Buildroot, U-Boot
-- Développement de drivers Linux : Char, Block, MTD, Platform
+- Maîtrise avancée des Linux embarqués particulièrement Linux Wireless (OpenWrt): init, config, partitions, upgrade.
+- Board Bring Up de nouvelles cartes, Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
+- Toolchains, cross-compilation et BSP Linux : crosstool-NG, yocto, buildroot, u-Boot
+- Développement de drivers Linux : char, block, mtd, plateform, spi.
 - Développement de drivers pour blocs FPGA (architecture RISC-V)
-- Bonne compréhension de la stack Wi-Fi (ath11k/ath10k, mac80211, cfg80211, nl80211)
+- Bonne compréhension de la stack TCP/IP et Wi-Fi (ath11k/ath10k, mac80211, bridge, vlan, arp)
 
 **Manufacturing**
 - Bonne connaissance des processus de production en France, certifications et interaction avec clients internationaux
@@ -109,10 +156,10 @@ Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 
 **Outils**
 - GNU/Linux : make, gcc, gdb, kgdb, valgrind
-- YOCTO, Buildroot, Git, Quilt, Redmine, Vim
+- YOCTO, Buildroot, crosstool-NG, Git, Quilt, Redmine, Vim
 
 **Protocoles**
-- Wi-Fi, I2C, SPI, USB, RS-232
+- Wi-Fi, TCP/IP, UART, I2C, SPI, USB, RS-232
 - Bonne compréhension du modèle OSI et de la Pile WI-FI
 
 ---
