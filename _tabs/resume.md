@@ -35,12 +35,12 @@ Environnement technique :C, Bash, Ruby, Lua, Yocto, U-Boot, Linux embarqué.
 **ACKSYS Communications & Systems** — Yvelines, France
 *Novembre 2021 — Avril 2026*
 
-Développement , évolution, et maintenance  de **WaveOS, un Os Linux embarqué basé sur OpenWrt**, avec des developpement  sur l’ensemble de la pile logicielle, du bootloader `u-Boot` au `device tree` jusqu’au Kernel, aux services système et aux applications embarquées.
+Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué basé sur OpenWrt**, avec des développements sur l’ensemble de la pile logicielle, du bootloader `u-Boot` au `device tree` jusqu’au Kernel, aux services et applications embarquées.
 
 - **Wi-Fi et roaming :** 
     - Portage de la stratégie de roaming vers OpenWrt 24 / Linux 6.6, avec adaptation de toute la stack Wi-Fi (`iw`, `iwinfo`, `hostapd`, `wpa_supplicant`, `mac80211`, `ath11k`).  
-    - Analyse, debug approfondie du driver `ath11k` (Copy Engine, WMI, MAC, Data Path) et la couche `mac80211`. J'ai aporté des modifications me permettant de réduire le temps de roaming de **1 s à ~ 150 ms**.
-    - Analyse et validation de firmwares Qualcomm apres leur modification par un tiers. Mise en place d'une station dediée et analyse par wireshark des trames de powersave, de differents parametres de `ath11k`  permettant de modifier le comportement des `beacon`, `scan` ..etc
+    - Debug et analyse approfondie du driver `ath11k` (Copy Engine, WMI, MAC, Data Path) et la couche `mac80211`. J'ai apporté des modifications permettant de réduire le temps de roaming de **1 s à ~ 150 ms**.
+    - Analyse et validation de firmwares Qualcomm après leur modification par un sous-traitant. Mise en place d'une station dediée et analyse par wireshark des trames de `powersave`, de differents parametres de `ath11k`  permettant de modifier le comportement de `beacon`,`idle` `scan` ..etc
     - Mise en évidance de bugs dans les firmwares proprietaires Qualcomm dans la gestion du roaming, des trames vlan. Sujet remonté au mainline.
 
 - **Roaming prédictif :**   
@@ -49,29 +49,30 @@ Développement , évolution, et maintenance  de **WaveOS, un Os Linux embarqué 
 
 - **Développement userspace :**   
     - Développement de « surveyd », un daemon de monitoring pour détecter et gérer les pertes de lien Wi-Fi.  
-    - Evolution et maintenance des services init, SNMP, télémétrie, supervision (`collectd`) et du systeme des mises à jour OTA.
+    - Evolution et maintenance des services init, net-snmp, hostapd, supplicant, télémétrie, supervision (`collectd`) et du systeme des mises à jour OTA.
 
 - **Bootloader et fiabilité système :**   
     - Développement d’un mécanisme de démarrage dual-boot sous `u-Boot`, démarage sur plusieurs partitions, récupération après crash ou corruption  
     - Developpement de la page GUI permettant de programmer Flasher WaveOS et u-boot, de switcher entre les partitions.  
-    - Gestion des configs système sur les paritions
-    - Mise au point d'une station de prorgammation des socs vierges ou corrompus avec l'outil `sahara` de chez Qualcomm
+    - Gestion des configs système sur entres paritions.
+    - Mise au point d'une station de prorgammation des socs vierges ou corrompus avec l'outil `sahara` de chez Qualcomm.
 
 
 - **Interface Web embarquée :**   
     - Conception et implémentation d’une nouvelle WebUI pour les routeurs ACKSYS, migration de Lua vers une architecture full JavaScript.
-    - Réécriture de dizaines de page de configurations des services ACKSYS en JS.
+    - Réécriture de dizaines de pages de configuration des services ACKSYS en JavaScript.
 
 - **Linux embarqué :**   
-    - Board bring up de la serie ACKSYS airwave : uboot, kernel, GUI.
+    - Board bring up de la serie ACKSYS airwave : device tree, uboot, kernel, GUI.
     - Mesure et amélioration du temps de démarage et de l'empreinte mémoire sur la serie ACKSYS airbox.
     - Modification du driver phy gpy215 sur railbox pour la gestion de l'autoneg. 
     - Intégration et modification du driver ds2411 pour la gestion des numero de serie.
+    - Modification de drivers: leds, gpio, athxk, ethernet phy.
     - Developpement de features, debug, maintenance  de fonctionnalités et de services sur l’ensemble de WaveOS: ubus, collectd, net snmp, bridge vlan, init, wpa_supplicant, hostapd
 
 - **Érude de sécurisation de la serie airwave**
     - Analyse des lacunes de sécurité des produits ACKSYS, notamment l’absence de Secure Boot.
-    - Étude des solutions de sécurisation hardware/software: Secure Boot, TPM et ARM TrustZone.
+    - Etude des solutions de sécurisation hardware/software: Secure Boot, TPM et ARM TrustZone.
     - Recherche technique approfondie, collecte d’informations auprès de fournisseurs et étude comparative des coûts.
     - Formalisation des besoins et rédaction d’une spécification technique, présentée en réunion pour évaluation.
 
@@ -146,21 +147,23 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
 - Développement de drivers Linux : char, block, mtd, plateform, spi.
 - Développement de drivers pour blocs FPGA (architecture RISC-V)
 - Bonne compréhension de la stack TCP/IP et Wi-Fi (ath11k/ath10k, mac80211, bridge, vlan, arp)
+- Lecture de datasheet, schemas hardware.
 
 **Manufacturing**
 - Bonne connaissance des processus de production en France, certifications et interaction avec clients internationaux
 - Tests, validation et gestion des bugs en environnement de production
 
 **Languages de programmation**
-- C, Shell, RISC-V asm, Lua, HTML/CSS, JavaScript, Python
+- C, Shell, RISC-V asm, Lua, HTML/CSS, JavaScript, Python, ruby
 
 **Outils**
-- GNU/Linux : make, gcc, gdb, kgdb, valgrind
+- GNU/Linux : make, gcc, gdb, kgdb, valgrind, ftrace.
 - YOCTO, Buildroot, crosstool-NG, Git, Quilt, Redmine, Vim
+- Wireshark, tcpdump, iperf
 
 **Protocoles**
 - Wi-Fi, TCP/IP, UART, I2C, SPI, USB, RS-232
-- Bonne compréhension du modèle OSI et de la Pile WI-FI
+- Bonne compréhension du modèle OSI et de la stack WI-FI
 
 ---
 # Projects and Open-Source Contributions
