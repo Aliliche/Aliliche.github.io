@@ -10,3 +10,22 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 @import "{{ site.theme }}";
 
 /* append your custom style below */
+
+.experience {
+  background-color: #f1f1f1;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  color: #222;
+}
+
+.experience h2 {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+.experience hr {
+  border-color: #d2d2d2;
+}
+

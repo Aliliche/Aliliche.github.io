@@ -142,12 +142,12 @@ Environnement technique :C, Bash, FreeRTOS, TCP/IP, FPGA
 
 **Linux Embarqué**
 - Maîtrise avancée des Linux embarqués particulièrement Linux Wireless (OpenWrt): init, config, partitions, upgrade.
-- Board Bring Up de nouvelles cartes, Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
+- Board Bring Up de nouvelles cartes. Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
 - Toolchains, cross-compilation et BSP Linux : crosstool-NG, yocto, buildroot, u-Boot
 - Développement de drivers Linux : char, block, mtd, plateform, spi.
 - Développement de drivers pour blocs FPGA (architecture RISC-V)
 - Bonne compréhension de la stack TCP/IP et Wi-Fi (ath11k/ath10k, mac80211, bridge, vlan, arp)
-- Lecture de datasheet, schemas hardware.
+- Lecture de datasheet, schémas hardware.
 
 **Manufacturing**
 - Bonne connaissance des processus de production en France, certifications et interaction avec clients internationaux
