@@ -1,7 +1,8 @@
 ---
-title: Resume/CV
+title: CV/Resume
 icon: fas fa-file-alt
 order: 4
+permalink: /resume/ 
 ---
 {% capture experience_content %}
 {: style="text-align : justify" }
@@ -20,8 +21,11 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
   </a>
   
   <a href="{{ '/about/' | relative_url }}" class="contact-button">
-    CV (pdf)
+    (PDF)
   </a>
+  <p class="language-switch">
+    <a href="{{ '/resume-en/' | relative_url }}">🇬🇧 English (EN) →</a>
+  </p>
 </div>
 
 {% endcapture %}
