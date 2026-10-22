@@ -40,7 +40,7 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 **Wizzilab** — Montrouge, France
 *Avril 2026 — Aujourd’hui*
 
-- Production des gateways Wizzilab : reprise, simplification et évolution des outils de programmation. Mise en place d'une machine dédiée et formation des ingénieurs au processus de production automatisé. Cela couvre la programmation des SoC vierges, l'enregistrement des gateways sur les serveurs, tests et validation avant et après production, ainsi que la préparation à la livraison.
+- Production des gateways Wizzilab : reprise, simplification et évolution des outils de programmation des gateways. Mise en place d'une machine dédiée et formation des ingénieurs au processus de production automatisé. Cela couvre la programmation des SoC vierges, l'enregistrement des gateways sur les serveurs, tests et validation avant et après production, ainsi que la préparation à la livraison.
 - Maintenance de la distribution Yocto des gateways sur plateforme Variscite : maintenance des couches `meta-variscite` ainsi que  du  bootloader  `u-Boot-imx` spécifique à la plateforme
 - Débogage et correction de bugs de démarrage et de crashs survenant après les mises à jour `OTA upgrade`.
 - Correction de bugs divers jusqu'a la stabilisation du produit.
@@ -61,7 +61,7 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué basé sur OpenWrt**, avec des développements sur l’ensemble de la pile logicielle, du bootloader `u-Boot` au `device tree` jusqu’au Kernel, aux services et applications embarquées.
 
 - **Wi-Fi et roaming :** 
-    - Portage de la stratégie de roaming vers OpenWrt 24 / Linux 6.6, avec adaptation de toute la stack Wi-Fi (`iw`, `iwinfo`, `hostapd`, `wpa_supplicant`, `mac80211`, `ath11k`).  
+    - Portage de la stratégie de roaming vers OpenWrt 24 / Kernel 6.6, avec adaptation de toute la stack Wi-Fi (`iw`, `iwinfo`, `hostapd`, `wpa_supplicant`, `mac80211`, `ath11k`).  
     - Debug et analyse approfondie du driver `ath11k` (Copy Engine, WMI, MAC, Data Path) et la couche `mac80211`. J'ai apporté des modifications permettant de réduire le temps de roaming de **1 s à ~ 150 ms**.
     - Analyse et validation de firmwares Qualcomm après leur modification par un sous-traitant. Mise en place d'une station dediée et analyse par wireshark des trames de `powersave`, de differents parametres de `ath11k`  permettant de modifier le comportement de `beacon`,`idle` `scan` ..etc
     - Mise en évidance de bugs dans les firmwares proprietaires Qualcomm dans la gestion du roaming, des trames vlan. Sujet remonté au mainline.
@@ -77,7 +77,7 @@ Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué bas
 - **Bootloader et fiabilité système :**   
     - Développement d’un mécanisme de démarrage dual-boot sous `u-Boot`, démarage sur plusieurs partitions, récupération après crash ou corruption  
     - Developpement de la page GUI permettant de programmer Flasher WaveOS et u-boot, de switcher entre les partitions.  
-    - Gestion des configs système sur entres paritions.
+    - Gestion des configs système entre paritions.
     - Mise au point d'une station de prorgammation des socs vierges ou corrompus avec l'outil `sahara` de chez Qualcomm.
 
 
@@ -90,12 +90,12 @@ Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué bas
     - Mesure et amélioration du temps de démarage et de l'empreinte mémoire sur la serie ACKSYS airbox.
     - Modification du driver phy gpy215 sur railbox pour la gestion de l'autoneg. 
     - Intégration et modification du driver ds2411 pour la gestion des numero de serie.
-    - Modification de drivers: leds, gpio, athxk, ethernet phy.
-    - Developpement de features, debug, maintenance  de fonctionnalités et de services sur l’ensemble de WaveOS: ubus, collectd, net snmp, bridge vlan, init, wpa_supplicant, hostapd
+    - Modification de drivers: leds, gpio, ath11k, ethernet phy..
+    - Developpement de features, debug, maintenance  de fonctionnalités et de services sur l’ensemble de WaveOS: ubus, collectd, net-snmp, bridge vlan, init, wpa_supplicant, hostapd
 
-- **Érude de sécurisation de la serie airwave**
+- **Étude de sécurisation de la serie airwave**
     - Analyse des lacunes de sécurité des produits ACKSYS, notamment l’absence de Secure Boot.
-    - Etude des solutions de sécurisation hardware/software: Secure Boot, TPM et ARM TrustZone.
+    - Etude des solutions de sécurisation hardware/software: Secure Boot, TPM et ARM TrustZone, Qualcommn QFPROM.
     - Recherche technique approfondie, collecte d’informations auprès de fournisseurs et étude comparative des coûts.
     - Formalisation des besoins et rédaction d’une spécification technique, présentée en réunion pour évaluation.
 
