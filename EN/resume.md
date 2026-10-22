@@ -6,6 +6,11 @@ order: 4
 permalink: /resume-en/
 ---
 {% capture experience_content %}
+
+<p class="language-switch">
+    <a href="{{ '/resume/' | relative_url }}">🇫🇷 Français (FR) →</a>
+</p>
+
 {: style="text-align : justify" }
 Passionate about low-level development and integration, I work across the entire embedded Linux stack:
 
@@ -24,9 +29,6 @@ My versatility allows me to work across all software layers, while focusing on i
   <a href="{{ '/about/' | relative_url }}" class="contact-button">
     (PDF)
   </a>
-    <p class="language-switch">
-    <a href="{{ '/resume/' | relative_url }}">🇫🇷 Français (FR) →</a>
-    </p>
 </div>
 
 {% endcapture %}

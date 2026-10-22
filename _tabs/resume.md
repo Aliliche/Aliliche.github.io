@@ -4,7 +4,13 @@ icon: fas fa-file-alt
 order: 4
 permalink: /resume/ 
 ---
+
 {% capture experience_content %}
+
+<p class="language-switch">
+    <a href="{{ '/resume-en/' | relative_url }}">🇬🇧 English (EN) →</a>
+</p>
+
 {: style="text-align : justify" }
 Passionné par le développement et l’intégration bas niveau, j’interviens sur l’ensemble de la chaîne Linux embarqué: 
 
@@ -23,9 +29,6 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
   <a href="{{ '/about/' | relative_url }}" class="contact-button">
     (PDF)
   </a>
-  <p class="language-switch">
-    <a href="{{ '/resume-en/' | relative_url }}">🇬🇧 English (EN) →</a>
-  </p>
 </div>
 
 {% endcapture %}
