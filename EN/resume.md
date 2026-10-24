@@ -25,10 +25,11 @@ My versatility allows me to work across all software layers, while focusing on i
   <a href="{{ '/about/' | relative_url }}" class="contact-button">
     Contact me
   </a>
-
-  <a href="{{ '/about/' | relative_url }}" class="contact-button">
-    (PDF)
+  <a href="{{ '/assets/pdf/ALILICHE_LARBI_Embedded_Linux.pdf' | relative_url }}" 
+  class="contact-button" download>
+    PDF
   </a>
+
 </div>
 
 {% endcapture %}

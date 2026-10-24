@@ -26,8 +26,9 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
     Me contacter
   </a>
   
-  <a href="{{ '/about/' | relative_url }}" class="contact-button">
-    (PDF)
+  <a href="{{ '/assets/pdf/ALILICHE_LARBI_Embedded_Linux.pdf' | relative_url }}" 
+  class="contact-button" download>
+    PDF
   </a>
 </div>
 
