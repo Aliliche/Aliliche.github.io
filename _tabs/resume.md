@@ -44,8 +44,8 @@ Ma polyvalence me permet de travailler sur toutes les couches logicielles, tout 
 **Wizzilab** — Montrouge, France
 *Avril 2026 — Aujourd’hui*
 
-- Production des gateways Wizzilab : reprise, simplification et évolution des outils de programmation des gateways. Mise en place d'une machine dédiée et formation des ingénieurs au processus de production automatisé. Cela couvre la programmation des SoC vierges, l'enregistrement des gateways sur les serveurs, tests et validation avant et après production, ainsi que la préparation à la livraison.
-- Maintenance de la distribution Yocto des gateways sur plateforme Variscite : maintenance des couches `meta-variscite` ainsi que  du  bootloader  `u-Boot-imx` spécifique à la plateforme
+- **Maintenance de la distribution Yocto des gateways, plateforme Variscite :** maintenance des couches `meta-variscite` ainsi que  du  bootloader  `u-Boot-imx` spécifique à la plateforme
+- **Production des gateways Wizzilab:** reprise, simplification et évolution des outils de programmation des gateways. Mise en place d'une machine dédiée et formation des ingénieurs au processus de production automatisé. Cela couvre la programmation des SoC vierges, l'enregistrement des gateways sur les serveurs, tests et validation avant et après production, ainsi que la préparation à la livraison.
 - Débogage et correction de bugs de démarrage et de crashs survenant après les mises à jour `OTA upgrade`.
 - Correction de bugs divers jusqu'a la stabilisation du produit.
 
@@ -71,7 +71,7 @@ Développement , évolution, et maintenance  de **WaveOS, un Linux embarqué bas
     - Mise en évidance de bugs dans les firmwares proprietaires Qualcomm dans la gestion du roaming, des trames vlan. Sujet remonté au mainline.
 
 - **Roaming prédictif :**   
-    - Développement de fonctionnalités pour les projets ACKSYS & ATOS/NOKIA, modification de l'algorithme de roaming predictif pour ameliorer le débit de la communication bord-sol
+    - Développement de fonctionnalités pour les projets ACKSYS et ATOS/NOKIA, modification de l'algorithme de roaming predictif pour ameliorer le débit de la communication bord-sol
 
 
 - **Développement userspace :**   
@@ -185,23 +185,24 @@ Développement d’une petite application FreeRTOS sur soft-core Microblaze :
 {% capture experience_content %}
 **Linux Embarqué**
 - Maîtrise avancée des Linux embarqués particulièrement Linux Wireless (OpenWrt): init, config, partitions, upgrade.
-- Board bring-up de nouvelles cartes. Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
+- Board bring-up de nouvelles cartes sous buildroot et yocto: device tree, u-boot, kernel, rootfs.
+- Exellente comprehention des subsystem mtd, ubi et des mémoires nand/nor.
 - Toolchains, cross-compilation et BSP Linux : crosstool-NG, yocto, buildroot, u-Boot
 - Développement de drivers Linux : char, block, mtd, plateform, spi.
-- Développement de drivers pour blocs FPGA (architecture RISC-V)
+- Développement de drivers pour blocs FPGA (architecture RISC-V)a.
 - Bonne compréhension de la stack TCP/IP et Wi-Fi (ath11k/ath10k, mac80211, bridge, vlan, arp)
 - Lecture de datasheet, schémas hardware.
 
 **Manufacturing**
 - Bonne connaissance des processus de production en France, certifications et interaction avec clients internationaux
-- Tests, validation et gestion des bugs en environnement de production
+- Tests, validation et gestion des bugs en environnement de productiona.
 
 **Languages de programmation**
 - C, Shell, RISC-V asm, Lua, HTML/CSS, JavaScript, Python, ruby
 
 **Outils**
 - GNU/Linux : make, gcc, gdb, kgdb, valgrind, ftrace.
-- YOCTO, buildroot, crosstool-NG, git, quilt, redmine, vim.
+- Yocto, buildroot, crosstool-NG, git, quilt, redmine, vim.
 - Wireshark, tcpdump, iperf.
 
 **Protocoles**
