@@ -44,8 +44,8 @@ My versatility allows me to work across all software layers, while focusing on i
 **Wizzilab** — Montrouge, France
 *April 2026 — Present*
 
+- **Maintained the gateways' Yocto distribution on the Variscite platform:** maintained the `meta-variscite` layers and the platform-specific `u-boot-imx` bootloader.
 - **Wizzilab gateway production:** took over, simplified and enhanced programming tools. Set up a dedicated machine and trained engineers in the automated production process. This covers programming blank SoCs, registering gateways on servers, pre- and post-production testing and validation, and preparation for delivery.
-- Maintained the gateways' Yocto distribution on the Variscite platform: maintained the `meta-variscite` layers and the platform-specific `u-boot-imx` bootloader.
 - Debugged and fixed boot bugs and crashes occurring after `OTA upgrade` updates.
 - Fixed various bugs through to product stabilization.
 
@@ -180,7 +180,8 @@ Developed a small FreeRTOS application on a MicroBlaze soft core:
 {% capture experience_content %}
 **Embedded Linux**
 - Advanced proficiency in embedded Linux, particularly Linux wireless and OpenWrt: init, configuration, partitions, upgrades.
-- Board bring-up for new boards. Excellent understanding of the MTD and UBI subsystems and NAND/NOR flash memory.
+- Board bring-up for new boards with buildroot and yocto: device tree, uboot, kernel, rootfs.
+- Excellent understanding of the MTD and UBI subsystems and NAND/NOR flash memory.
 - Toolchains, cross-compilation and Linux BSPs: crosstool-NG, Yocto, Buildroot, U-Boot.
 - Linux driver development: character, block, MTD, platform and SPI drivers.
 - Driver development for FPGA blocks (RISC-V architecture).
